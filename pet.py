@@ -15,36 +15,35 @@ class Pet:
         self.healthRate = stats.get('healthRate', 2)
 
 
-    # Marisssa - feed function to feed pet
-    def Feed(self) -> None or str:
+    # feed function to feed pet
+    def Feed(self) -> None:
         if self.hunger <= 0:
-            return print('your pet is not hungry')
+            raise Exception('Your pet is not hungry.')
 
         self.hunger = max(self.hunger - 25, 0)
 
-    # lee - function to play with pet
-    def Play(self) -> None or str:
+    # function to play with pet
+    def Play(self) -> None:
         if self.happiness >= 100:
-            return print('your pet is already happy, come back and play another time')
+            raise Exception('Your pet is already happy. Come back and play later.')
 
         self.happiness = min(self.happiness + 5, 100)
 
-    # lee - function to clean pet
-    def Clean(self) -> None or str:
+    # function to clean pet
+    def Clean(self) -> None:
         if self.cleanliness >= 100:
-            return 'your pet is already clean, you can only clean it when it is dirty'
+            raise Exception('Your pet is already clean.')
 
         self.cleanliness = min(self.cleanliness + 15, 100)
 
-    # Marisssa - function to doctor/heal pet
-    def Doctor(self) -> None or str:
+    # function to doctor/heal pet
+    def Doctor(self) -> None:
         if self.health >= 100:
-            return print('your pet is already healthy, you can only doctor it when it is low health')
+            raise Exception('Your pet is healthy. Doctor is not needed.')
 
         self.health = min(self.health + 25, 100)
 
 
-    # Kevin
     # function to execute a cycle of stat decrease/increase
     def executeCycle(self) -> None:
         self.hunger = min(self.hunger + self.hungerRate, 100)
@@ -53,10 +52,10 @@ class Pet:
 
         # will only decrease health if there is a stat that is too low
         if self.getNeeds() != 'Nothing':
-            self.health = max(self.cleanliness - self.healthRate, 0)
+            self.health = max(self.health - self.healthRate, 0)
 
 
-    # emmanyel - getState function returns the state of the pet according to its stats
+    # getState function returns the state of the pet according to its stats
     def getState(self) -> str:
         if self.hunger >= 80:
             return 'Starving'
@@ -66,21 +65,34 @@ class Pet:
         if self.happiness <= 10:
             return 'Very sad'
         elif self.happiness <= 25:
-            return 'sad'
+            return 'Sad'
 
         if self.cleanliness <= 10:
             return 'Very dirty'
         elif self.cleanliness <= 25:
-            return 'dirty'
+            return 'Dirty'
 
         if self.health <= 10:
             return 'Very sick'
         elif self.health <= 25:
-            return 'sick'
+            return 'Sick'
 
         return 'Healthy'
 
-    # emmanuel - getNeeds function returns all the needs of the current pet according to stats
+    # gets simple state for image retrival
+    def getSimpleState(self):
+        if self.health <= 25:
+            return 'Hungry'
+        elif self.happiness <= 25:
+            return 'Sad'
+        elif self.cleanliness <= 25:
+            return 'Dirty'
+        elif self.hunger >= 60:
+            return 'Sick'
+
+        return 'Happy'
+
+    # getNeeds function returns all the needs of the current pet according to stats
     def getNeeds(self) -> str:
         needs = ''
 
