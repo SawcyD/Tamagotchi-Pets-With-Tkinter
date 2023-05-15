@@ -24,6 +24,7 @@ class Dragon(Pet):
             "Sad": "Images/SadDragon.png",
             "Dirty": "Images/DirtyDragon.png",
             "Sick": "Images/SickDragon.png",
+            "Hungry": "Images/HungryDragon.png"
         }
 
 class Monster(Pet):
@@ -44,10 +45,11 @@ class Monster(Pet):
         self.happinessRate = 10
 
         self.images = {
-            "Happy": "Images/HappyDragon.png",
-            "Sad": "Images/SadDragon.png",
-            "Dirty": "Images/DirtyDragon.png",
-            "Sick": "Images/SickDragon.png",
+            "Happy": "Images/HappyMonster.png",
+            "Sad": "Images/SadMonster.png",
+            "Dirty": "Images/DirtyMonster.png",
+            "Sick": "Images/SickMonster.png",
+            "Hungry": "Images/HungryMonster.png"
         }
 
 class Fluffycat(Pet):
@@ -66,10 +68,11 @@ class Fluffycat(Pet):
         self.dirtyRate = 30
 
         self.images = {
-            "Happy": "Images/HappyDragon.png",
-            "Sad": "Images/SadDragon.png",
-            "Dirty": "Images/DirtyDragon.png",
-            "Sick": "Images/SickDragon.png",
+            "Happy": "Images/FCHappy.png",
+            "Sad": "Images/FCSad.png",
+            "Dirty": "Images/FCDirty.png",
+            "Sick": "Images/FCSick.png",
+            "Hungry": "Images/FCHungry.png"
         }
 
     def Fluff(self) -> None:
@@ -95,6 +98,7 @@ class Kitten(Pet):
             "Sad": "Images/SadDragon.png",
             "Dirty": "Images/DirtyDragon.png",
             "Sick": "Images/SickDragon.png",
+            "Hungry": "Images/HungryDragon.png"
         }
 
     def pet(self) -> None:
