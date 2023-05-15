@@ -77,31 +77,4 @@ class Fluffycat(Pet):
 
     def Fluff(self) -> None:
         print('you fluffed the cat')
-
-class Kitten(Pet):
-    def __init__(self):
-        super().__init__(
-            'Kitten',
-            hunger = 15,
-            happiness = 90,
-            cleanliness = 60,
-            hungerRate = 2
-        )
-
-        self.hunger = 15
-        self.happiness = 90
-        self.cleanliness = 60
-        self.hungerRate = 2
-
-        self.images = {
-            "Happy": "Images/HappyDragon.png",
-            "Sad": "Images/SadDragon.png",
-            "Dirty": "Images/DirtyDragon.png",
-            "Sick": "Images/SickDragon.png",
-            "Hungry": "Images/HungryDragon.png"
-        }
-
-    def pet(self) -> None:
-        print('you pet the kitten')
-
-avaliablePets = [Dragon, Monster, Fluffycat, Kitten]
+avaliablePets = [Dragon, Monster, Fluffycat]
