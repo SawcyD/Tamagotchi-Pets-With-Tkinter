@@ -2,6 +2,8 @@
 
 This python project is a simple, text-based Tamagotchi pet simulator. In this game, you can take care of a virtual pet of your choosing.
 
+![Image](https://github.com/SawcyD/Tamagotchi-Pets-With-Tkinter/blob/master/content/demo.gif?raw=true)
+
 ## Prerequisites
 Ensure that you have the following installed:
 * Python 3.6 or later
